@@ -3,11 +3,14 @@
     <NuxtLink
       to="/"
       class="flex items-center"
+      title="Home"
+      aria-label="Home"
     >
       <img
         src="/public/logo.png"
         width="120px"
-        height="auto"
+        height="24px"
+        alt="Color Palettes Inspiration"
       >
     </NuxtLink>
 

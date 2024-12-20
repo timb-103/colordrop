@@ -22,6 +22,8 @@
           <UButton
             color="primary"
             icon="i-heroicons-arrow-right"
+            title="search"
+            aria-label="search"
             @click="search()"
           />
         </UButtonGroup>
