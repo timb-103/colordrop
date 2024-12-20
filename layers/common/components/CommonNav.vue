@@ -15,11 +15,11 @@
     </NuxtLink>
 
     <div>
-      <ul class="flex gap-2 items-center">
+      <ul class="flex gap-2 items-center text-sm font-medium">
         <li>
           <NuxtLink
             to="/"
-            active-class="text-primary"
+            active-class="text-primary-600"
             class="underline"
           >
             Home
@@ -28,7 +28,7 @@
         <li>
           <NuxtLink
             to="/colors"
-            active-class="text-primary"
+            active-class="text-primary-600"
             class="underline"
           >
             Colors
@@ -37,7 +37,7 @@
         <li>
           <NuxtLink
             to="/palette/liked"
-            active-class="text-primary"
+            active-class="text-primary-600"
             class="underline"
           >
             Liked
@@ -46,7 +46,7 @@
         <li>
           <NuxtLink
             to="/scan"
-            active-class="text-primary"
+            active-class="text-primary-600"
             class="underline"
           >
             Scan
@@ -55,7 +55,7 @@
         <li>
           <NuxtLink
             to="/about"
-            active-class="text-primary"
+            active-class="text-primary-600"
             class="underline"
           >
             About
