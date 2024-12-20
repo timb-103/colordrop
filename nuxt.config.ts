@@ -34,6 +34,11 @@ export default defineNuxtConfig({
   typescript: {
     typeCheck: 'build'
   },
+  nitro: {
+    experimental: {
+      tasks: true
+    }
+  },
   ui: {
     disableGlobalStyles: true
   },

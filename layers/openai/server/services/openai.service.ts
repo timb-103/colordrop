@@ -13,7 +13,7 @@ export class OpenAIService {
   public async getByMessages(messages: OpenAI.Chat.ChatCompletionCreateParamsNonStreaming['messages']): Promise<string[]> {
     const entity = await this.client.chat.completions.create({
       model: 'gpt-4o-mini',
-      temperature: 0.7,
+      temperature: 1.5,
       max_tokens: 200,
       messages
     });

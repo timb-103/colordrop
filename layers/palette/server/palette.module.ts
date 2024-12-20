@@ -5,6 +5,7 @@ import paletteConfig from './palette.config';
 import { PaletteRepository } from './repositories/palette.repository';
 import { PaletteService } from './services/palette.service';
 import { PaletteValidation } from './validations/palette.validation';
+import type { AIService } from '~/layers/ai/server/services/ai.service';
 
 export interface PaletteModule {
   service: PaletteService
@@ -19,13 +20,14 @@ export interface PaletteModule {
 
 export function getPaletteModule(
   db: Db,
-  logger: Logger
+  logger: Logger,
+  aiService: AIService
 ): PaletteModule {
   logger.info('initializing palette module');
 
   const collection = db.collection<PaletteEntity>(paletteConfig.collectionName);
   const repository = new PaletteRepository(collection);
-  const service = new PaletteService(repository);
+  const service = new PaletteService(repository, aiService);
 
   const validation = new PaletteValidation();
 

@@ -80,4 +80,16 @@ export class PaletteRepository {
 
     return result[0]?.allColorNames ?? [];
   }
+
+  public async getLastId(): Promise<number> {
+    const response = await this.collection.findOne({}, {
+      sort: { id: -1 }
+    });
+
+    if (response === null) {
+      throw createError({ statusCode: 404, statusMessage: 'palette not found' });
+    }
+
+    return response?.id;
+  }
 }

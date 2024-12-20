@@ -1,8 +1,10 @@
 import { type Filter, type Sort } from 'mongodb';
 import type { ListPaletteDto, PaletteDto } from '../dtos/palette.dto';
-import { mapPaletteEntityToDto } from '../helpers/palette.helper';
+import { getCategorizePalettePrompt, getDescribePalettePrompt, getHexPalettePrompt, getNamePalettePrompt, mapPaletteEntityToDto } from '../helpers/palette.helper';
 import type { PaletteRepository } from '../repositories/palette.repository';
 import type { PaletteEntity } from '../entities/palette.entity';
+import ntc from '../../utils/ntc.util';
+import type { AIService } from '~/layers/ai/server/services/ai.service';
 
 export interface ListPaletteFilterParams {
   tags?: string[]
@@ -12,7 +14,8 @@ export interface ListPaletteFilterParams {
 
 export class PaletteService {
   constructor(
-    private readonly repository: PaletteRepository
+    private readonly repository: PaletteRepository,
+    private readonly aiService: AIService
   ) {}
 
   public async list(page: number, size: number, filter: ListPaletteFilterParams): Promise<ListPaletteDto> {
@@ -72,5 +75,36 @@ export class PaletteService {
 
   public async getColorNames(): Promise<string[]> {
     return (await this.repository.getColorNames()).sort((a, b) => a.localeCompare(b));
+  }
+
+  public async create(): Promise<PaletteDto> {
+    const hexPaletteResponse = await this.aiService.getByPrompt(getHexPalettePrompt());
+    const hexPalette = hexPaletteResponse[0]
+      .split(',')
+      .map(color => color.trim());
+
+    const [name] = await this.aiService.getByPrompt(getNamePalettePrompt(hexPalette));
+    const categories = await this.aiService.getByPrompt(getCategorizePalettePrompt(hexPalette));
+    const [description] = await this.aiService.getByPrompt(getDescribePalettePrompt(hexPalette));
+
+    const colors = hexPalette.map(v => ({
+      hex: v,
+      name: ntc.name(v)[1]
+    }));
+
+    const tags = categories[0].split(',').map(v => v.trim());
+
+    const lastId = await this.repository.getLastId();
+    const entity = await this.repository.create({
+      id: lastId + 1,
+      colors,
+      description,
+      tags,
+      name,
+      createdAt: new Date(),
+      likesCount: 0
+    });
+
+    return mapPaletteEntityToDto(entity);
   }
 }

@@ -32,7 +32,7 @@ export async function setup(): Promise<void> {
     const openai = getOpenAIModule(logger);
     const ai = getAIModule(logger, openai.service);
     const health = getHealthModule(db, logger);
-    const palette = getPaletteModule(db, logger);
+    const palette = getPaletteModule(db, logger, ai.service);
 
     await Promise.all([
     ]);
