@@ -1,7 +1,0 @@
-.nova/
-run.sh
-.nova*
-.DS_Store
-tools/
-colors.db
-.vscode/*

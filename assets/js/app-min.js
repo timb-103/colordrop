@@ -1,1 +1,0 @@
-function topMenuScrollShadow(){var e=window.pageYOffset,o=document.querySelector("#site-navigaion");window.addEventListener("scroll",function(){(e=window.pageYOffset)>=20&&o.classList.add("highlight"),e<20&&o.classList.remove("highlight")})}topMenuScrollShadow();
