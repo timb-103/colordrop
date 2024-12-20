@@ -1,6 +1,6 @@
 import type { ListPaletteDto } from '../../dtos/palette.dto';
 
-export default defineCachedEventHandler(async (event): Promise<ListPaletteDto> => {
+export default defineEventHandler(async (event): Promise<ListPaletteDto> => {
   const query = await modules.palette.validation.getListInputQuery(event);
 
   /** @descritpion as its a get request we must parse some numbers */
@@ -17,4 +17,4 @@ export default defineCachedEventHandler(async (event): Promise<ListPaletteDto> =
   });
 
   return response;
-}, { maxAge: 60 * 60 });
+});
