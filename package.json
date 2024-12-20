@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@apideck/better-ajv-errors": "0.3.6",
+    "@nuxt/image": "1.8.1",
     "@nuxt/ui": "2.18.7",
     "@nuxtjs/google-fonts": "3.2.0",
     "@nuxtjs/plausible": "1.0.2",
@@ -21,15 +22,14 @@
     "@vueuse/core": "11.1.0",
     "ajv": "8.17.1",
     "ajv-formats": "3.0.1",
-    "colorthief": "^2.6.0",
+    "colorthief": "2.6.0",
     "date-fns": "4.1.0",
     "lodash": "4.17.21",
     "mongodb": "6.9.0",
     "nuxt": "3.14.1592",
     "openai": "4.65.0",
     "pino": "8.16.1",
-    "pino-pretty": "10.2.3",
-    "sqlite3": "^5.1.7"
+    "pino-pretty": "10.2.3"
   },
   "overrides": {
     "vue": "latest"

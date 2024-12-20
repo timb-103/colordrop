@@ -24,7 +24,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: 'light'
   },
-  modules: ['@nuxtjs/google-fonts', '@nuxt/ui', '@nuxtjs/plausible'],
+  modules: ['@nuxtjs/google-fonts', '@nuxt/ui', '@nuxtjs/plausible', '@nuxt/image'],
   tailwindcss: {
     viewer: false
   },

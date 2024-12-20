@@ -6,12 +6,12 @@
       title="Home"
       aria-label="Home"
     >
-      <img
-        src="/public/logo.png"
-        width="120px"
-        height="24px"
+      <NuxtImg
+        src="/logo.jpg"
+        width="120"
+        height="24"
         alt="Color Palettes Inspiration"
-      >
+      />
     </NuxtLink>
 
     <div>
