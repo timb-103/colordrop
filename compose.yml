@@ -1,0 +1,10 @@
+services:
+  database:
+    container_name: colordrop_database
+    image: mongo:7.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: colordrop
+      MONGO_INITDB_ROOT_PASSWORD: secret
+    ports:
+      - "27019:27017"
+    restart: always
