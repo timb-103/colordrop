@@ -11,6 +11,7 @@
         width="120"
         height="24"
         alt="Color Palettes Inspiration"
+        sizes="240px"
       />
     </NuxtLink>
 
