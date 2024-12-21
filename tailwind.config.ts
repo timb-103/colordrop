@@ -1,6 +1,9 @@
 import type { Config } from 'tailwindcss';
 
 const config: Partial<Config> = {
+  experimental: {
+    optimizeUniversalDefaults: true
+  },
   /** @description this is disabled permanently by changing the class from the default `dark:` until we add dark mode support */
   darkMode: ['class', 'dark-disabled'],
   theme: {
