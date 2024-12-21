@@ -1,11 +1,48 @@
+import { resolve } from 'path';
 import type { Config } from 'tailwindcss';
 
 const config: Partial<Config> = {
   experimental: {
     optimizeUniversalDefaults: true
   },
-  /** @description this is disabled permanently by changing the class from the default `dark:` until we add dark mode support */
-  darkMode: ['class', 'dark-disabled'],
+  content: {
+    files: [
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/data/table.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/accordion.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/alert.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/avatar.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/avatarGroup.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/buttonGroup.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/chip.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/dropdown.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/kbd.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/meter.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/meterGroup.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/elements/progress.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/checkbox.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/radioGroup.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/radio.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/toggle.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/formGroup.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/select.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/textarea.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/selectMenu.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/forms/range.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/layout/card.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/layout/container.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/layout/divider.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/navigation/breadcrumb.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/navigation/commandPalette.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/navigation/pagination.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/navigation/verticalNavigation.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/overlays/contextMenu.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/overlays/modal.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/overlays/popover.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/overlays/slideover.mjs')}`,
+      `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/overlays/tooltip.mjs')}`
+    ]
+  },
+  darkMode: [],
   theme: {
     extend: {
       boxShadow: {
@@ -13,25 +50,8 @@ const config: Partial<Config> = {
         md: '0 8px 16px -4px rgb(0 0 0 / 0.1)',
         sm: '0 2px 6px -3px rgb(0 0 0 / 0.08)'
       },
-      aspectRatio: {
-        palette: '8 / 5',
-        color: '9 / 16'
-      },
       colors: {
         black: '#272f38',
-        primary: {
-          50: '#ecf4ff',
-          100: '#ddebff',
-          200: '#c2daff',
-          300: '#9cbfff',
-          400: '#759aff',
-          500: '#5576ff',
-          600: '#364cf5',
-          700: '#2a3bd8',
-          800: '#2535ae',
-          900: '#263489',
-          950: '#161c50'
-        },
         'default-blue': {
           50: '#eff4ff',
           100: '#dbe6fe',
@@ -44,33 +64,6 @@ const config: Partial<Config> = {
           800: '#1e4baf',
           900: '#1e408a',
           950: '#172a54'
-        },
-
-        warning: {
-          50: '#fffbeb',
-          100: '#fff3c6',
-          200: '#ffe688',
-          300: '#fed34b',
-          400: '#fec536',
-          500: '#f89e08',
-          600: '#dc7603',
-          700: '#b65207',
-          800: '#943f0c',
-          900: '#79340e',
-          950: '#461a02'
-        },
-        'default-black': {
-          50: '#f6f6f6',
-          100: '#e7e7e7',
-          200: '#d1d1d1',
-          300: '#b0b0b0',
-          400: '#888888',
-          500: '#1F2328', // after here goes lighter
-          600: '#363b43',
-          700: '#3d454d',
-          800: '#455059',
-          900: '#4f5d6b',
-          950: '#5c707e'
         }
       }
     }
