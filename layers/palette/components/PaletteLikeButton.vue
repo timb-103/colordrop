@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import { StorageSerializers, useLocalStorage } from '@vueuse/core';
 import type { PaletteModel } from '../models/palette.model';
+import { PlausibleEventName } from '~/layers/plausible/types';
 
 export interface Props {
   id: PaletteModel['id']
@@ -48,6 +49,8 @@ function like(): void {
   session.value = existingIds.join(',');
 
   createLike({ id: props.id.toString() });
+
+  sendPlausibleEvent(PlausibleEventName.LIKE_BUTTON_CLICKED);
 }
 
 function unlike(): void {
