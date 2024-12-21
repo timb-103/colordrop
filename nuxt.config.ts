@@ -59,6 +59,7 @@ export default defineNuxtConfig({
   routeRules: {
     /** @description add cache time for images to make pagespeed insights happy */
     '/img/**': { headers: { 'cache-control': 'max-age=31536000' } },
+    '/_ipx/**': { headers: { 'cache-control': 'max-age=31536000' } },
     '/gradients': { redirect: { to: '/', statusCode: 301 } },
     '/flat': { redirect: { to: '/', statusCode: 301 } }
   },
