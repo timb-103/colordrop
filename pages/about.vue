@@ -18,7 +18,8 @@
         ColorDrop was built in 2015 by <NuxtLink to="https://triss.dev/" target="_blank" class="underline">Tristan White</NuxtLink>
         <!-- eslint-disable-next-line -->
         as a fun side project, then in 2024 sold to <NuxtLink class="underline" to="https://timb.com">Tim B</NuxtLink> who re-built 
-        it and plans on adding more features over time.
+        <!-- eslint-disable-next-line -->
+        it and plans on adding more features over time. Read more about <NuxtLink class="underline" to="https://triss.dev/blog/saying-goodbye-to-colordrop/">Tristan saying goodbye to colordrop</NuxtLink>.
       </p>
       <p>
         Tim is also the owner of some other color related tools:
