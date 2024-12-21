@@ -2,9 +2,6 @@ import { resolve } from 'path';
 import type { Config } from 'tailwindcss';
 
 const config: Partial<Config> = {
-  experimental: {
-    optimizeUniversalDefaults: true
-  },
   content: {
     files: [
       `!${resolve('node_modules/@nuxt/ui/dist/runtime/ui.config/data/table.mjs')}`,
