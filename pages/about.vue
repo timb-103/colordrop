@@ -28,9 +28,11 @@
         <!-- eslint-disable-next-line -->
         <NuxtLink class="underline" to="https://randomcolor.com">random color</NuxtLink>, 
         <!-- eslint-disable-next-line -->
-        <NuxtLink class="underline" to="https://rgbhexcode.com">rgb hex code</NuxtLink>, and
+        <NuxtLink class="underline" to="https://rgbhexcode.com">rgb hex code</NuxtLink>,
         <!-- eslint-disable-next-line -->
-        <NuxtLink class="underline" to="https://colorwheel.co">color wheel</NuxtLink>.
+        <NuxtLink class="underline" to="https://colorwheel.co">color wheel</NuxtLink>, and
+        <!-- eslint-disable-next-line -->
+        <NuxtLink class="underline" to="https://convertacolor.com">color converter</NuxtLink>.
       </p>
       <p>
         ColorDrop is completely free to use and open source. The code is
