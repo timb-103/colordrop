@@ -24,11 +24,11 @@
       <p>
         Tim is also the owner of some other color related tools:
         <!-- eslint-disable-next-line -->
-        <NuxtLink class="underline" to="https://colormagic.app">color magic</NuxtLink>, 
+        <NuxtLink class="underline" to="https://colormagic.app">color palette generator</NuxtLink>, 
         <!-- eslint-disable-next-line -->
-        <NuxtLink class="underline" to="https://randomcolor.com">random color</NuxtLink>, 
+        <NuxtLink class="underline" to="https://randomcolor.com">random color generator</NuxtLink>, 
         <!-- eslint-disable-next-line -->
-        <NuxtLink class="underline" to="https://rgbhexcode.com">rgb hex code</NuxtLink>,
+        <NuxtLink class="underline" to="https://rgbhexcode.com">hex code color picker</NuxtLink>,
         <!-- eslint-disable-next-line -->
         <NuxtLink class="underline" to="https://colorwheel.co">color wheel</NuxtLink>, and
         <!-- eslint-disable-next-line -->
