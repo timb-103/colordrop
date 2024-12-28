@@ -29,8 +29,9 @@ export function getHexPalettePrompt(idea: string[]): string {
 }
 
 export function getNamePalettePrompt(idea: string[], hexCodes: string): string {
-  let prompt = `Give me a name for these keywords "${idea.join(',')}" with these hex codes: "${hexCodes}". Don't be too creative.`;
-  prompt += 'Include a color in the name, the color must from one of the hex codes.';
+  let prompt = `Give me a color palette name for these keywords "${idea.join(',')}" with these hex codes: "${hexCodes}". Don't be too creative.`;
+  prompt += 'ALWAYS include a color in the name from one of the hex codes.';
+  prompt += 'The name must be 2 words unless the color is a two words in that case it can be 3 words.';
   prompt += 'Only return the name, no quotes.';
 
   return prompt;
