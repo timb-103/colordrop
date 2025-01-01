@@ -3,8 +3,9 @@
     <UButton
       :size="size"
       leading-icon="i-heroicons-heart"
+      :variant="variant"
       :label="likesCount.toString()"
-      :color="isLiked ? 'primary' : 'white'"
+      :color="isLiked ? 'primary' : color"
       @click.prevent="isLiked ? unlike() : like()"
     />
   </ClientOnly>
@@ -18,11 +19,15 @@ import { PlausibleEventName } from '~/layers/plausible/types';
 export interface Props {
   id: PaletteModel['id']
   size: 'xs' | 'sm' | 'lg' | 'xl'
+  variant?: 'ghost' | 'solid'
+  color?: 'gray' | 'white'
   likesCount: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'sm'
+  size: 'sm',
+  variant: 'solid',
+  color: 'white'
 });
 
 const { mutate: createLike } = useOptimisticCreatePaletteLike();

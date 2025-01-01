@@ -1,12 +1,19 @@
 <template>
   <UButton
     :to="`/palette/${palette.id}`"
-    class="flex flex-col gap-1"
+    class="relative grid"
     :ui="{
       rounded: 'rounded-xl'
     }"
+    variant="ghost"
     :title="palette.name"
+    truncate
   >
+    <!-- name badge -->
+    <p class="text-xs truncate max-w-[90%] mb-1 ml-1">
+      {{ palette.name }}
+    </p>
+
     <!-- color palette -->
     <div class="grid grid-cols-4 rounded-xl overflow-hidden h-36 w-full">
       <div
@@ -23,6 +30,7 @@
       <PaletteLikeButton
         :id="palette.id"
         :likes-count="palette.likesCount"
+        variant="ghost"
         size="xs"
       />
 
