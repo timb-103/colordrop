@@ -6,6 +6,7 @@ import type { PaletteEntity } from '../entities/palette.entity';
 import ntc from '../../utils/ntc.util';
 import { getRandomAdjectiveWords, getRandomColorWords, getRandomShadeWords, getRandomWords } from '../helpers/random-words.helper';
 import type { AIService } from '~/layers/ai/server/services/ai.service';
+import { escapeText } from '~/layers/common/utils/strings.util';
 
 export interface ListPaletteFilterParams {
   tags?: string[]
@@ -35,8 +36,8 @@ export class PaletteService {
 
       const wordQueries = words.map(word => ({
         $or: [
-          { tags: { $regex: new RegExp(word, 'i') } }, // Match in tags array
-          { 'colors.name': { $regex: new RegExp(word, 'i') } } // Match in colors.name
+          { tags: { $regex: new RegExp(escapeText(word), 'i') } }, // Match in tags array
+          { 'colors.name': { $regex: new RegExp(escapeText(word), 'i') } } // Match in colors.name
         ]
       }));
 
